@@ -2,6 +2,7 @@ import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
@@ -24,11 +25,13 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Navbar />
-      <main className="min-h-screen pt-16">
-        <Router />
-      </main>
-      <Toaster />
+      <ThemeProvider>
+        <Navbar />
+        <main className="min-h-screen pt-16">
+          <Router />
+        </main>
+        <Toaster />
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
