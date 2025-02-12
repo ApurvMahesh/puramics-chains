@@ -16,13 +16,13 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 w-full bg-background border-b z-50">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center">
+      <div className="container flex h-16 items-center justify-between px-4">
+        <div className="flex items-center gap-8">
           <Link href="/">
-            <a className="mr-8 font-bold text-xl">Puramics Chains</a>
+            <a className="font-bold text-xl">Puramics Chains</a>
           </Link>
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="gap-2">
               <NavigationMenuItem>
                 <Link href="/services">
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
