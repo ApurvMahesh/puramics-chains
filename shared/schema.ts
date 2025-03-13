@@ -1,8 +1,8 @@
-import { pgTable, text, serial } from "drizzle-orm/pg-core";
+import { mysqlTable, text, int, serial } from "drizzle-orm/mysql-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const contactMessages = pgTable("contact_messages", {
+export const contactMessages = mysqlTable("contact_messages", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
   email: text("email").notNull(),
