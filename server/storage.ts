@@ -8,10 +8,11 @@ export interface IStorage {
 
 export class DatabaseStorage implements IStorage {
   async createContactMessage(message: InsertContact): Promise<ContactMessage> {
+    console.log("contact", contactMessages);
     const [contactMessage] = await db
       .insert(contactMessages)
       .values(message)
-      .returning();
+      .execute();
     return contactMessage;
   }
 }

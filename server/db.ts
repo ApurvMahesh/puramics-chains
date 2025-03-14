@@ -1,5 +1,6 @@
 import { Pool, neonConfig } from '@neondatabase/serverless';
-import { drizzle } from 'drizzle-orm/neon-serverless';
+import mysql from "mysql2/promise";
+import { drizzle } from 'drizzle-orm/mysql2';
 import ws from 'ws';
 import * as schema from '@shared/schema';
 import dotenv from "dotenv";
@@ -14,13 +15,9 @@ if (!process.env.DATABASE_URL) {
   );
 }
 
-// Initialize database connection pool
-export const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+// Create MySQL connection
+const pool = mysql.createPool({
+  uri: process.env.DATABASE_URL,
 });
 
-// Create a Drizzle ORM instance
-export const db = drizzle({
-  client: pool,
-  schema,
-});
+export const db = drizzle(pool); // Use MySQL drizzle connection

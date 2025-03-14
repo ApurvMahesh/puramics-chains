@@ -64,9 +64,9 @@ export default function Contact() {
               <div>
                 <h3 className="font-semibold">Office Address</h3>
                 <p className="text-muted-foreground">
-                  123 Security Avenue, Tech District
+                  Gunjur, Varthur
                   <br />
-                  San Francisco, CA 94105
+                  Bengaluru, India 560087
                 </p>
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function Contact() {
               <Mail className="w-5 h-5 text-[#058ED9]" />
               <div>
                 <h3 className="font-semibold">Email</h3>
-                <p className="text-muted-foreground">contact@puramicschains.com</p>
+                <p className="text-muted-foreground">admin@puramicschains.com - Not functional currently</p>
               </div>
             </div>
             
@@ -83,7 +83,7 @@ export default function Contact() {
               <Phone className="w-5 h-5 text-[#058ED9]" />
               <div>
                 <h3 className="font-semibold">Phone</h3>
-                <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                <p className="text-muted-foreground">+91 (897) 184-6464</p>
               </div>
             </div>
           </div>
